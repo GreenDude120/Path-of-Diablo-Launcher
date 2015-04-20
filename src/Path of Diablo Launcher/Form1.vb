@@ -57,6 +57,7 @@ Public Class Form1
             Dim savednsChk = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\PoDLauncher", "nsChk", Nothing)
             Dim saveddfxChk = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\PoDLauncher", "dfxChk", Nothing)
             Dim savedaspectChk = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\PoDLauncher", "aspectChk", Nothing)
+            Dim savedrunasChk = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\PoDLauncher", "runasChk", Nothing)
 
             If savedwChk = "True" Then
                 wChk.Checked = True
@@ -76,6 +77,10 @@ Public Class Form1
 
             If savedaspectChk = "True" Then
                 aspectChk.Checked = True
+            End If
+
+            If savedrunasChk = "True" Then
+                runasChk.Checked = True
             End If
 
         End If
@@ -327,7 +332,18 @@ Public Class Form1
                 My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\PoDLauncher", "aspectChk", "False")
             End If
 
+            If runasChk.Checked = True Then
+                d2.Verb = "runas"
+                My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\PoDLauncher", "runasChk", "True")
+            Else
+                My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\PoDLauncher", "runasChk", "False")
+            End If
+
+
+
             Process.Start(d2)
+
+            End
 
         End If
 

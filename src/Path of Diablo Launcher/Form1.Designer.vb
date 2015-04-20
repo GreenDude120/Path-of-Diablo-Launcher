@@ -37,6 +37,7 @@ Partial Class Form1
         Me.skipChk = New System.Windows.Forms.CheckBox()
         Me.wChk = New System.Windows.Forms.CheckBox()
         Me.setgatewayBtn = New System.Windows.Forms.Button()
+        Me.runasChk = New System.Windows.Forms.CheckBox()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -101,15 +102,16 @@ Partial Class Form1
         'playBtn
         '
         Me.playBtn.Enabled = False
-        Me.playBtn.Location = New System.Drawing.Point(12, 264)
+        Me.playBtn.Location = New System.Drawing.Point(12, 269)
         Me.playBtn.Name = "playBtn"
-        Me.playBtn.Size = New System.Drawing.Size(164, 66)
+        Me.playBtn.Size = New System.Drawing.Size(164, 75)
         Me.playBtn.TabIndex = 1
         Me.playBtn.Text = "Checking for Update"
         Me.playBtn.UseVisualStyleBackColor = True
         '
         'GroupBox3
         '
+        Me.GroupBox3.Controls.Add(Me.runasChk)
         Me.GroupBox3.Controls.Add(Me.aspectChk)
         Me.GroupBox3.Controls.Add(Me.dfxChk)
         Me.GroupBox3.Controls.Add(Me.nsChk)
@@ -117,7 +119,7 @@ Partial Class Form1
         Me.GroupBox3.Controls.Add(Me.wChk)
         Me.GroupBox3.Location = New System.Drawing.Point(182, 185)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(171, 145)
+        Me.GroupBox3.Size = New System.Drawing.Size(171, 159)
         Me.GroupBox3.TabIndex = 4
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Launch Flags"
@@ -175,18 +177,28 @@ Partial Class Form1
         'setgatewayBtn
         '
         Me.setgatewayBtn.Enabled = False
-        Me.setgatewayBtn.Location = New System.Drawing.Point(12, 185)
+        Me.setgatewayBtn.Location = New System.Drawing.Point(12, 190)
         Me.setgatewayBtn.Name = "setgatewayBtn"
-        Me.setgatewayBtn.Size = New System.Drawing.Size(164, 66)
+        Me.setgatewayBtn.Size = New System.Drawing.Size(164, 73)
         Me.setgatewayBtn.TabIndex = 5
         Me.setgatewayBtn.Text = "Gateway Already Set"
         Me.setgatewayBtn.UseVisualStyleBackColor = True
+        '
+        'runasChk
+        '
+        Me.runasChk.AutoSize = True
+        Me.runasChk.Location = New System.Drawing.Point(6, 136)
+        Me.runasChk.Name = "runasChk"
+        Me.runasChk.Size = New System.Drawing.Size(111, 17)
+        Me.runasChk.TabIndex = 5
+        Me.runasChk.Text = "Run D2 as admin."
+        Me.runasChk.UseVisualStyleBackColor = True
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(363, 341)
+        Me.ClientSize = New System.Drawing.Size(363, 353)
         Me.Controls.Add(Me.setgatewayBtn)
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.playBtn)
@@ -224,5 +236,6 @@ Partial Class Form1
     Friend WithEvents wChk As System.Windows.Forms.CheckBox
     Friend WithEvents setgatewayBtn As System.Windows.Forms.Button
     Friend WithEvents patchPrgBr As System.Windows.Forms.ProgressBar
+    Friend WithEvents runasChk As System.Windows.Forms.CheckBox
 
 End Class
